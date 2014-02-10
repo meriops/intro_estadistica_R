@@ -1,4 +1,8 @@
-# 
+#  this is the "live" script written as 
+#  I was guiding participants through the 
+#  exercises and correcting on the screen
+#
+#
 
 setwd("~/Telechargements/essai_StatCourse/stats/scripts")
 
