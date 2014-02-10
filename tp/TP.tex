@@ -1,0 +1,873 @@
+
+\documentclass[mathserif]{beamer}
+
+
+%\includeonlyframes{d45}
+\includeonlylecture{day3}
+
+%\usepackage{beamerarticle}
+
+% ========================= GENERAL THEMES ========================= %%{{{
+  
+\mode<presentation> {%%%{{{
+
+% ----- complete theme -----
+\usetheme[hideothersubsections]{Hannover}
+
+% ----- colors -----
+% --- complete color theme
+%\usecolortheme{seagull}
+
+% --- inner color theme
+\usecolortheme{rose}
+
+% --- outer color theme
+%\usecolortheme{seahorse}
+
+
+% ----- uncover behaviour -----
+\setbeamercovered{transparent}
+}%%%}}}
+
+%To get rid of the navigation symbols at the bottom right of each slide I use
+%\setbeamertemplate{navigation symbols}{}
+
+
+% ----- modify some templates of beamer -----%%{{{
+\setbeamertemplate{blocks}[rounded]
+%\setbeamertemplate{enumerate items}[default]%%}}}
+
+
+% ----- modify colors -----%%{{{
+%\setbeamercolor{title}{fg=red!80!black}
+%\setbeamercolor{title}{fg=red!80!black,bg=red!20!white}%%%}}}
+
+%%}}}
+
+
+% ========================= GENERAL CONFIGURATION =========================%%%{{{
+
+% ----- misc layout -----%%{{{
+\usepackage{pgfpages}
+%%\pgfpagesuselayout{resize}[a4paper,border shrink=5mm,landscape]
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{show notes}
+%\setbeamertemplate{note page}[compress]
+%\urlstyle{sf}%%}}}
+
+
+% ----- PGF / Tikz graphics -----%%{{{
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepgflibrary{arrows}
+\usetikzlibrary{arrows}%%}}}
+
+
+% ----- font -----%%{{{
+\usepackage[english]{babel}
+ \usepackage[utf8]{inputenx}
+% ----- to choose font using fontspec + xelatex -----
+%%  \usepackage{fontspec}
+%%  \usepackage{xunicode} %Unicode extras!
+%%  \usepackage{xltxtra}  %Fixes
+
+%%  %\setmainfont{Liberation Serif}
+%%  %\setsansfont{Liberation Sans}
+%%  %\setmainfont{Liberation Sans}
+%%  \setmainfont{Universalis ADF Cd Std}
+%%  \setmainfont{Universalis ADF Cd Std}
+%%  %\setsansfont{Banksia}%%}}}
+
+
+% ----- misc characters (math...) -----%%{{{
+\usepackage{ccicons} % icons for Creative Commons
+\usepackage{extarrows} % extra arrows
+\usepackage{mathabx}   % maths fonts
+\usepackage{amsmath}   % maths fonts
+\usepackage{wasysym}   % maths fonts
+\usepackage{stmaryrd}  % maths fonts%%}}}
+
+
+% ----- extra functionalities in arrays -----%%{{{
+\usepackage{array}   
+\usepackage{multirow}   %%}}}
+
+
+% ----- links and pdf -----%%{{{
+% cf doc from hyperref for refining options
+ \hypersetup{%
+ colorlinks=true,    %no frame around URL
+ urlcolor=olive,    % color  of URLs (brown, gray, 
+ %unicode=true,
+}%%%}}}
+
+
+% ----- logo -----%%{{{
+% \pgfdeclareimage[height=1.5cm]{le-logo}{fcd-logo.png}
+% \logo{\pgfuseimage{le-logo}}
+%\pgfdeclareimage[height=0.5cm]{logo}{tu-logo}
+%\logo{\pgfuseimage{logo}}
+%\logo{\includegraphics[height=0.5cm]{logo.png}}
+% ==> does no work with the selected theme (?)%%}}}
+
+
+% ----- R logo -----%%{{{
+\newcommand{\Rlogo}{\protect\includegraphics[height=2.5ex,keepaspectratio]{Rlogo.png}}%%}}}
+
+
+
+% ----- contents at begining of each lecture%%{{{
+\AtBeginLecture{%
+\frame{%
+\LARGE %
+\begin{center}
+\structure{\insertlecture}
+\end{center} } }%%}}}
+
+
+%% ----- contents at begining of each section%%{{{
+%  \AtBeginSection[]{%
+%    \begin{frame}<beamer>{Programa}
+%      \tableofcontents[currentsection, hideallsubsections]
+%    \end{frame}
+%  }%%%}}}
+
+
+%% ----- contents at begining of each part%%{{{
+% uncomment to compile the whole doc
+%\AtBeginPart{%
+%\frame{%
+%\partpage
+%} }%%}}}
+
+%%}}}
+
+%
+%% ----- TITLE PAGE -----%%{{{
+%\title[Introducci\'on a la estad\'istica]{Introducci\'on a la estad\'istica}
+%\subtitle[Bases indispensables y uso de R]{Bases indispensables y uso de \Rlogo}
+%\author[]{Olivier Devineau \\ \href{mailto:olivier.devineau@fcdarwin.org.ec}{\texttt{\small olivier.devineau@fcdarwin.org.ec} } }
+%\institute[]{Fundaci\'on Charles Darwin}
+%\date[Version courte]{Taller interno, 27--30 abril 2010}%%}}}
+%
+
+
+
+
+
+
+\begin{document}
+
+
+\lecture{Introducci\'on a \Rlogo}{day1}
+
+\begin{frame}[plain,label=d1]%%{{{
+   \frametitle{?`Qu\'e es \Rlogo?}
+   \begin{itemize}
+      \item Programa de codigo libre
+      \item Dedicado a la estad\'istica pero no solamente \ldots
+      \item Entorno: programa y languaje de programaci\'on
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d2]%%{{{
+   \frametitle{?`Qu\'e es \Rlogo?}
+   \begin{itemize}
+      \item Funciona en modo consola
+      \item Se interact\'ua escribiendo comandos 
+      \item Funciones existentes
+      \item Posibilidad de crear nuevas funciones
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d3]%%{{{
+   \frametitle{Preparaci\'on}
+   \begin{itemize}
+      \item \begin{semiverbatim} c:\\Mis Documentos\\stats \end{semiverbatim}
+      \item \begin{semiverbatim} \texttt{c:\\Mis Documentos\\stats\\data} \end{semiverbatim}
+      \item \begin{semiverbatim} \texttt{c:\\Mis Documentos\\stats\\docs} \end{semiverbatim}
+      \item \begin{semiverbatim} \texttt{c:\\Mis Documentos\\stats\\scripts} \end{semiverbatim}
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d4]%%{{{
+   \frametitle{Empezamos}
+   \begin{itemize}
+      \item !`Abren R! 
+      \item Prompt: \alert{$>$}
+      \item \texttt{\structure{q()}}
+      \item Par\'entesis, a\'un si estan vacios
+      \item Consejo: !`cerrar par\'entesis inmediatamente!
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d5]%%{{{
+   \frametitle{Cerramos}
+   \begin{itemize}
+      \item \texttt{Save workspace image? [y/n/c]:} 
+      \item Espacio de trabajo = variables que usamos en esta sesi\'on dentro de R
+      \item Cerrar la ventana = N
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d6]%%{{{
+   \frametitle{Uso de scripts}
+   \begin{itemize}
+      \item En el espacio de trabajo, no hay los comandos que tipeamos
+      \item Definir la carpeta de trabajo: 
+      \item \structure{\begin{semiverbatim}setwd("c:\\Mis Documentos\\stats")\end{semiverbatim}}
+      \item Para guardar comandos, se usa un script
+      \item Abrir editor de texto (geany/cream/smultron/textwrangler...)
+      \item Guardar el documento como:
+      \item \begin{semiverbatim} c:\\Mis Documentos\\stats\\scripts\\script.R \end{semiverbatim}
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d7]%%{{{
+   \frametitle{Comentarios}
+   \begin{itemize}
+      \item R ignora los $\#$
+      \item !`Comentarios, comentarios, comentarios!
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d7bis]%%{{{
+\frametitle{Ayuda dentro de \Rlogo}
+\begin{itemize}
+   \item \structure{help(q) 
+   \item  \structure{help(quit)}}
+   \item \structure{?q}
+   \item \structure{help.start(browser="firefox")}
+   \item \structure{help.search()}
+   \item \structure{??quit}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d8]%%{{{
+   \frametitle{Ayuda fuera de \Rlogo}
+   \framesubtitle{(!`Google es tu amigo!)}
+   \begin{itemize}
+      \item \url{http://cran.r-project.org/}
+      \item \url{http://crantastic.org/}
+      \item \url{www.rseek.org/}
+      \item \url{} STOP
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d9]%%{{{
+   \frametitle{R es una calculadora}
+   \begin{itemize}
+      \item \structure{3+5}
+      \item \structure{2*4}
+      \item \structure{3-8}
+      \item \structure{2.1-6*2.5}
+      \item \structure{3*2-5*(2-4)/6.02}
+      \item \structure{2$\hat{\;}$2}
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d10]%%{{{
+   \frametitle{R es una calculadora cientifica}
+   \begin{itemize}
+     \item \structure{sqrt(4)}
+     \item \structure{abs(-4)}
+     \item \structure{log(4)}
+     \item \structure{sin(0)}
+     \item \structure{exp(1)}
+     \item \structure{round(3.1415,2)}
+      \item  Algunas constantes: \structure{pi}
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d11]%%{{{
+   \frametitle{Creaci\'on de variables}
+   \begin{itemize}
+      \item Crear una variable: \structure{x $<$-- 3.14}
+      \item Ver el valor de un variable: \structure{x}
+      \item Usar una variable: \structure{y $<$- 2*x}
+      \item Mostrar todas las variables: \structure{ls()}
+      \item Borrar una variable: \structure{rm(x)}
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d12]%%{{{
+   \frametitle{Noci\'on de objetos}
+   \begin{itemize}
+      \item Vector: colecci\'on de elementos de mismo tipo
+      \item Crear un vector: \structure{c()}
+      \item \structure{x $<$-- c(1,2,3,-5,0)}
+      \item \structure{y $<$-- c(``a'',``b'',``c'',``AA'')}
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d13]%%{{{
+   \frametitle{Otras maneras de crear vectores}
+   \begin{itemize}
+     \item \structure{rep(2.34, 5)}
+     \item \structure{2:7}
+     \item \structure{6:1}
+     \item \structure{seq(from=1, to=2, by=0.25)}
+     \item \structure{seq(from=1, to=2, length=7)}
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d14]%%{{{
+   \frametitle{Otro objetos}
+   \begin{itemize}
+      \item Generalizaci\'on en 2 dimensiones del vector: \structure{matrix()}
+      \item Generalizaci\'on en n dimensiones del vector: \structure{array()}
+      \item Para variables cualitativas: \structure{factor()}
+      \item Lo m\'as com\'un con datos experimentales: \structure{data.frame()}
+      \item Contenedor general de datos: \structure{list()}
+   \end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d15]%%{{{
+\frametitle{Operaciones sobre los vectores }
+\begin{exampleblock}{Ejercicio:}
+\begin{itemize}
+   \item Crean un vector x, un vector y de mismo tama\~no que x, y un vector z de tama\~no diferente. ?`Qu\'e hacen los comandos siguientes?
+\end{itemize}
+   \begin{columns}[c, totalwidth=10cm]
+      \begin{column}[]{4cm}
+         \begin{itemize}
+            \item \structure{x+1}
+            \item \structure{x*2}
+            \item \structure{log(x)}
+            \item \structure{x$>$2}
+         \end{itemize}
+      \end{column}
+      \begin{column}[]{4cm}
+         \begin{itemize}
+            \item \structure{x+y}
+            \item \structure{x*y}
+            \item \structure{x+z}
+            \item \structure{x*z}
+         \end{itemize}
+      \end{column}
+   \end{columns}
+\end{exampleblock}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d16]%%{{{
+\frametitle{Acceso a los elementos de un vector }
+\begin{itemize}
+  \item Indices y operador \structure{[~]}
+  \item \structure{x$<$-c(1,3,-2,0,1.3,-6.43)}
+  \item \structure{x[1]}
+  \item \structure{x[3]}
+  \item \structure{x[-4]}
+  \item \structure{x[c(1,3)]}
+  \item \structure{x[c(-4,-5,-1)]}
+  \item \structure{x[c(TRUE,FALSE,TRUE,TRUE,FALSE,FALSE)]}
+  \item \structure{x[c(T,F)]}
+  \item \structure{x[x$<$1]}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d17]%%{{{
+\frametitle{Un lenguaje para la estad\'istica}
+\begin{itemize}
+  \item \structure{sum(x)}
+  \item \structure{length(x)}
+  \item \structure{mean(x)}
+  \item \structure{sd(x)}
+  \item \structure{median(x)}
+  \item \structure{var(x)}
+  \item \structure{summary(x)}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d18]%%{{{
+\frametitle{Un languaje para la estad\'istica}
+\begin{exampleblock}{Ejercicio:}
+\begin{itemize}
+   \item Crean un vector x de tama\~no $>10$
+   \item \alert{Sin} usar \structure{mean()} ni \structure{var()}, calculan la media y la varianza de x. Guardan los resultados en las variables \emph{media.x} y \emph{varianza.x}
+   \item Comparan con los resultados de \structure{mean(x)} y \structure{var(x)}
+\end{itemize}
+\end{exampleblock}
+\end{frame}%%}}}
+
+
+
+
+
+%
+%\begin{frame}[plain,label=d45]%%{{{
+%\frametitle{Numero de errores en un follete}
+%\begin{itemize}
+%   \item Crear el vector \emph{err1} = 2 3 0 3 1 0 0 1
+%   \item Calculan la media, la mediana y la varianza de \emph{err1}
+%   \item Entre la versi\'on 1 y la versi\'on 2, se corregio las errores de la primera pagina
+%   \item Crear el vector \emph{err2} = 0 3 0 3 1 0 0 1 que toma al dia el conteo de errores en el folleto \alert{sin} tipear el vector completo
+%\end{itemize}
+%\end{frame}%%}}}
+%
+
+
+
+
+
+
+
+\begin{frame}[plain,label=d19]%%{{{
+\frametitle{Importaci\'on de datos en R}
+\begin{itemize}
+   \item Lo m\'as flexible: \structure{read.table(~)}
+   \item Variante: \structure{read.csv()}
+   \item !`Necesita camino completo!
+   \item Para importar datos de Excel: convertir en *.csv desde Excel y leer el archivo *.csv desde R
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d20]%%{{{
+\frametitle{Pinzones de Darwin}
+\begin{itemize}
+   \item \structure{?read.table}
+   \item \structure{picos $<$- read.table(``beaksize.csv'', header=TRUE, sep=``\textbackslash t'', dec=``,'')}
+   \item Nombre del archivo
+   \item El archivo tiene un membrete
+   \item Separador de columnas
+   \item Separador de decimales
+   \item Datos del archivo en variable \emph{picos}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d21]%%{{{
+\frametitle{Objeto \emph{data.frame}}
+\begin{itemize}
+   \item Hoja de c\'alculo para almanecer datos
+   \item Tabla de 2 dimensiones 
+   \item Con nombres de columnas, nombres de l\'ineas \ldots
+   \item L\'ineas = individuos
+   \item Columnas = variables
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d22]%%{{{
+\frametitle{Atributos de \emph{picos}}
+\begin{itemize}
+\item \structure{dim(picos)}
+\item \structure{nrow(picos)}
+\item \structure{ncol(picos)}
+\item \structure{rownames(picos)}
+\item \structure{colnames(picos)}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d22bis]%%{{{
+\frametitle{Acceder a las variables de \emph{picos}}
+\begin{itemize}
+   \item Con los indices: \structure{picos[, 1]}
+   \item Con los nombres de la variables: \structure{picos[, "beaksize"]}
+   \item Con el \$: \structure{picos\$beaksize}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d23]%%{{{
+\frametitle{Introducci\'on a los gr\'aficos}
+\begin{itemize}
+\item \structure{plot(1:10)}
+\item \structure{plot(picos)}
+\item Algunos par\'ametros (ver \structure{?par}): 
+   \begin{description}
+      \item[type =] tipo de l\'inea
+      \item[main =] titulo del gr\'afico
+      \item[xlab =] titulo para eje x
+      \item[ylab =] titulo para eje y
+      \item[col =] color
+      \item[\ldots]
+   \end{description}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d24]%%{{{
+\frametitle{Vector y factor}
+\begin{itemize}
+   \item Variable continua: vector
+   \item Variable discreta: factor
+   \item factor = vector + lista de valores posibles
+   \item \structure{as.factor()} transforma un vector en factor
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d25]%%{{{
+\frametitle{\emph{picos}: gr\'afico}
+\begin{itemize}
+   \item<+(1)-> \structure{plot(x=picos[,``survival''], y=picos[,``beaksize''], xlab=``Sobreviviencia'', ylab=``Largo del pico'', col=``blue'', main=``Sobreviviencia de los pinzones'')}
+\end{itemize}
+\begin{exampleblock}{Ejercicio}
+\begin{itemize}[<+->]
+   \item Chequen \structure{picos\$survival}. ?`De qu\'e tipo es?
+   \item ?`La representaci\'on gr\'afica es correcta?
+   \item ?`Como cambiarla?
+\end{itemize}
+\end{exampleblock}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d26]%%{{{
+\frametitle{\emph{picos}: gr\'afico}
+\small
+\begin{itemize}[<+->]
+   \item \structure{plot(x=as.factor(picos[,``survival'']), y=picos[,``beaksize''], xlab=``Sobreviviencia'', ylab=``Largo del pico'', col=``blue'', main=``Sobreviviencia de los pinzones'')}
+   \item Para transformar en factor de manera permanente:
+   \item<+(1)-> \structure{picos[,``survival''] $<$-- as.factor(picos[,``survival''])}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d27]%%{{{
+\frametitle{M\'as sobre los gr\'aficos}
+\begin{itemize}
+   \item \structure{plot()} es una funci\'on gen\'erica
+   \item Su comportamiento cambia en funci\'on de los datos
+   \item Vean \structure{?plot} y \structure{?plot.default}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,plain,label=d28]%%{{{
+\frametitle{Histograma}
+\begin{itemize}[<+->]
+   \item \structure{hist(picos[,"beaksize"])}  
+   \item Par\'ametros:
+      \begin{description}[<2->]
+      \item[freq:] ?`N\'umeros o porcentajes?
+      \item[breaks:] N\'umero de clases
+      \item[plain,labels:] ?`Etiquetar las barras?
+      \end{description}
+   \item \structure{hist(picos[,"beaksize"], breaks=20, plain,labels=TRUE, col="lightgrey", xlab="Largo del pico", ylab="Numero de observaciones", main="Pinzones de Darwin : largo del pico") }
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d29]%%{{{
+\frametitle{Un poco m\'as sobre los gr\'aficos}
+\begin{itemize}
+   \item \structure{example(plot)}
+   \item \structure{example(plot.default)}
+   \item \structure{example(hist)}
+   \item \structure{demo(graphics)}
+   \item \structure{demo(persp)}
+   \item \structure{library(lattice); demo(lattice) }
+   \item \structure{library(plotrix); demo(plotrix) }
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d30]%%{{{
+\frametitle{Concurso de belleza}
+\begin{exampleblock}{Ejercicio}
+\begin{itemize}
+   \item Trazan $f(x)=sin(x)$ con $x\in[-2\pi,2\pi]$ !`la m\'as linda posible!
+\end{itemize}
+\end{exampleblock}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d31]%%{{{
+\frametitle{Creaci\'on de nuevas funciones}
+\begin{itemize}
+   \item nombre $<$-- function(arg1,arg2,...)\{expresi\'on\}
+   \item \structure{fun $<$-- function(x)\{x$\hat{~}$2\}}
+   \item \structure{fun2 $<$-- function(a, b, c = 4, d = FALSE)\{\ldots\}}
+   \item \structure{fun $<$-- function(x)\{y <- x$\hat{~}$2; return(y) \}}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d32]%%{{{
+\frametitle{Control de ejecuci\'on}
+\begin{itemize}
+\item \structure{if(condici\'on)\{ expresi\'on\}}
+\item \structure{if(condici\'on)\{ expresi\'on \emph{else} \}}
+\item \structure{for(variable en secuencia)\{ expresi\'on\}}
+\item \structure{while(condici\'on)\{ expresi\'on\}}
+\item Para m\'as informaci\'on, ver \structure{?Control}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d33]%%{{{
+\frametitle{!`Te toca a ti!}
+\begin{exampleblock}{Ejercicio}
+\begin{itemize}
+   \item Escribir una func\'ion \emph{freq} que restituye la frecuencia de los n\'umeros dados en argumento
+   \item \alert{Pista}: chequeen \structure{?sum}
+\end{itemize}
+\end{exampleblock}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d34]%%{{{
+\frametitle{!`Te toca a ti!}
+\begin{exampleblock}{Ejercicio}
+\begin{itemize}
+\item Dados N=40 y M=100
+   \item Usen \structure{runif()} y \structure{matrix()} para crear una matriz aleatoria de dimensiones N*M
+   \item Escriben una nueva funci\'on que calcula la media de cada columna.
+   \item \alert{Pista}: Hay por lo menos 3 maneras diferentes (+un bonus)
+   \item \alert{Pista}: chequeen \emph{for} en \structure{?Control}, \structure{?rep}, \structure{?matmult}, \structure{?split}, \structure{?sapply}
+\end{itemize}
+\end{exampleblock}
+\end{frame}%%}}}
+
+
+
+
+\lecture{Tests estad\'isticos}{day2}
+
+\begin{frame}[plain,label=d35]%%{{{
+\frametitle{Pre-calentamiento}
+\framesubtitle{Los iris de Fisher}
+\begin{itemize}
+   \item Cargar los datos \structure{iris.csv}
+   \item Mirarlos de manera gr\'afica
+   \item ?`De qu\'e tipo es el objeto \emph{iris}?  (\structure{typeof()})
+   \item ?`Cu\'ales son las dimensiones de \emph{iris}?
+   \item ?`Qu\'e variables contiene?
+   \item ?`Cuantos individuos hay por especie?
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d36]%%{{{
+\frametitle{Pre-calentamiento}
+\framesubtitle{Los iris de Fisher}
+\begin{itemize}
+   \item Extraer sub-conjunto de datos para la especie \emph{virginica}
+   \item Extraer \emph{Petal.Length} para \emph{virginica} dentro de una nueva variable llamada \emph{petal.length.vir}
+   \item C\'alcular m\'inimo, m\'aximo, media y varianza de la variable Petal.Length (todas las especies de iris)
+   \item \alert{Truco:} chequeen la funci\'on \structure{summary()}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d37]%%{{{
+\frametitle{Test estad\'istico}
+\framesubtitle{Efecto del Rumbocur}
+\begin{itemize}
+   \item De acuerdo a la literatura cientifica, la prote\'ina \textsc{Prot} se encuentra en la poblaci\'on a una concentraci\'on promedio de 20 ng/ml. Se piensa que la droga \emph{Rumbocur} podr\'ia afectar el nivel de la prote\'ina en los pacientes
+   \item Datos: Resultado de un experimento en el cu\'al 10 personas recibieron el \emph{Rumbocur} y 10 personas recibieron un placebo
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d38]%%{{{
+\frametitle{Test estad\'istico}
+\framesubtitle{Efecto del Rumbocur}
+\begin{itemize}
+   \item Cargar el archivo de datos \emph{rumbocur.csv}
+   \item Extraer la variable \emph{drug} 
+   \item Dar la hip\'otesis nula biol\'ogica
+   \item Dar la hip\'otesis nula estad\'istica
+   \item Se usa $\alpha=0.05$
+   \item ?`Qu\'e test usar para chequear la hip\'otesis nula?
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d39]%%{{{
+\frametitle{Test estad\'istico}
+\framesubtitle{Efecto del Rumbocur}
+\begin{itemize}
+   \item Test $t$ de Student
+   \medskip
+   \item $$T=\frac{\mathrm{Media_{\;OBS}} -  \mathrm{Media_{\;TEO}} }{SE_{y}}$$
+   \medskip
+   \item $$SE_{y}=\sqrt{\frac{var(y)}{N}}$$
+   \item Hacer el test ``a mano'' (usando R para calcular $T$)
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d40]%%{{{
+\frametitle{Test estad\'istico}
+\framesubtitle{Efecto del Rumbocur}
+\begin{itemize}
+   \item Buscar la funci\'on de R que permite hacer un test $t$
+   \item Hacer el test con la funci\'on de R
+   \item ?`Conclusi\'on estad\'istica?
+   \item ?`Conclusi\'on biol\'ogica?
+   \item ?`Qu\'e se necesita reportar para publicar el resultado?
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d41]%%{{{
+\frametitle{Test estad\'istico}
+\framesubtitle{Efecto del Rumbocur}
+\begin{itemize}[<+-| visible@+->]
+   \item ?`Qu\'e se necesita para chequear que la diferencia en concentraci\'on de \emph{Prot} se debe al Rumbocur?
+   \item !`Se necesita un control!
+   \item Para comparar el grupo que recibi\'o la droga con el grupo que recibi\'o el placebo, ?`qu\'e test se va a usar?
+   \item Dar la hip\'otesis nula biol\'ogica del nuevo test
+   \item Dar la hip\'otesis nula estad\'istica
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d42]%%{{{
+\frametitle{Test estad\'istico}
+\framesubtitle{Efecto del Rumbocur}
+\begin{itemize}
+   \item Correr el test (directamente con la funci\'on de R)
+   \item ?`Conclusi\'on estad\'istica?
+   \item ?`Conclusi\'on biol\'ogica?
+   \item ?`Qu\'e se necesita reportar para publicar el resultado?
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d43]%%{{{
+\frametitle{Observaci\'on}
+\begin{itemize}
+   \item Equivalente no par\'ametrico del test t: test de Mann-Whitney (ver \structure{?wilcox.test})
+   \item Si el mismo grupo recibe el placebo por 2 semanas y despu\'es recibe el Rumbocur por 2 semanas, las muestras estan asociadas. Se necesite usar la versi\'on ``asociada'' del test t (argumento \structure{paired=T} en \structure{t.test()})
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d44]%%{{{
+\frametitle{Test $\chi^2$ de ajuste}
+\framesubtitle{con $k>2$ muestras}
+\begin{itemize}
+   \item Una empresa crea una nueva bebida. Hay 3 versiones A, B, y C. 120 personas prueban las 3 versiones y deciden cual prefieren. 30 personas prefieren A, 54 prefieren B, y 36 personas prefieren C.
+   \item  Crear el vector de datos
+   \item ?`Hip\'otesis nula biol\'ogica?
+   \item ?`Hip\'otesis nula estad\'istica?
+   \item Correr el test y concluir
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d45]%%{{{
+\frametitle{Test $\chi^2$ de independencia}
+\framesubtitle{Tabla de contingencia}
+\begin{itemize}
+   \item Cargar los datos \emph{wasp.csv}
+   \item ?`Cua\'ales son la hip\'otesis?
+   \item Transformarlo en una tabla de contingencia (ver \structure{?xtabs})
+   \item Correr el test y concluir
+\end{itemize}
+\end{frame}%%}}}
+
+
+
+
+
+\lecture{Regresi\'on lineal}{day3}
+
+
+
+\begin{frame}[plain,label=d46]%%{{{
+\frametitle{Pre-calentamiento}
+\begin{itemize}
+   \item Hagan el vector siguiente con 1 comando
+  %\item $0\; 0\; 0\; -1\; -1\; -1\; -1\; -1\; -1\; -1\; -1\; -1\; -1\; 2\; 2\; 2\; 2\; 2$
+  \item $0\;0\;0-1-1-1-1-1-1-1-1-1-1\;2\;2\;2\;2\;2$
+   \item Truco: vean \structure{?rep()} y piensen en vectores
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d47]%%{{{
+\frametitle{Correlaci\'on}
+\begin{itemize}
+   \item Cargar los datos \emph{cars} con \structure{data(cars)}
+   \item Estos datos est\'an en pies y millas por hora \ldots
+   \item Convertir en el sistema m\'etrico (1pie=0.3048m y 1Mi/h=1.609344 km/h)
+   \item Hacer la representaci\'on gr\'afica con titulos en los ejes
+   \item Viendo el gr\'afico, que se puede decir?
+   \item Calcular el coeficiente de correlaci\'on
+   \item ?`Qu\'e se puede concluir respecto a la fuerza de la relaci\'on lineal entre las dos variables?
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d48]%%{{{
+\frametitle{Fumadores y tensi\'on arterial}
+\begin{itemize}
+   \item En una poblaci\'on, se toma una muestra aleatoria de 34 personas (17 fumadores, 17 no fumadores) a quien se pregunt\'o la edad y se midi\'o la tensi\'on arterial (en mmHg)
+   \item Cargar los datos desde \emph{epidemio.txt}
+   \item Hacer la representaci\'on gr\'afica de la tensi\'on arterial con respecto a la edad
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d49]%%{{{
+\frametitle{Fumadores y tensi\'on arterial}
+\begin{itemize}
+   \item ?`Qu\'e se puede decir?
+   \item ?`Como se puede chequear?
+   \item Ajustar el modelo lineal (\textbf{L}inear \textbf{M}odel)
+   \item Tension = a*Edad + b
+   \item Trazar la l\'inea de regresi\'on
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d50]%%{{{
+\frametitle{Fumadores y tensi\'on arterial}
+\begin{itemize}
+   \item Chequear \structure{?lm}
+   \item Formula: Tension $\sim$ Edad
+   \item \structure{?coefficients}
+   \item \structure{?abline}
+   \item Probar \structure{names(m1)}
+   \item \structure{m1\$coefficients}
+   \item \structure{summary(m1)}
+\end{itemize}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d52]%%{{{
+\frametitle{Fumadores y tensi\'on arterial}
+\begin{semiverbatim}
+\begin{itemize}
+   \item[$>$] epidemio <- read.table(data/epidemio.txt, header=T, skip=1)
+   \item[$>$] plot(tension $\sim$ edad, data=epidemio)
+   \item[$>$] m1 <- lm(tension $\sim$ edad, data=epidemio)
+   \item[$>$] summary(modelo)
+   \item[$>$] abline(modelo)
+\end{itemize}
+\end{semiverbatim}
+\end{frame}%%}}}
+
+\begin{frame}[plain,label=d53]%%{{{
+\frametitle{}
+\begin{itemize}
+   \item 
+   \item 
+   \item 
+\end{itemize}
+\end{frame}%%}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}[plain,label=d45]%%{{{
+\frametitle{}
+\begin{itemize}
+   \item 
+   \item 
+   \item 
+\end{itemize}
+\end{frame}%%}}}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\node {\parbox[c]{11ex}{N\'umero de muestras}} [grow'=right, ->]
+      child {node {1}}
+      child {node {2}
+        child {node {Asociadas}} 
+        child {node {No}}
+            }
+      child[missing] {node {}}
+      child {node {$k$}
+        child {node {Asociadas}} 
+        child {node {No}}
+            } ;
+\end{tikzpicture}

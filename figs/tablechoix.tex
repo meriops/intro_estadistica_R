@@ -1,0 +1,129 @@
+\newcolumntype{V}[1]{%
+  >{\scriptsize\raggedright\hspace{0pt}}m{#1}%
+}
+
+\newcolumntype{T}[1]{%
+  >{\begin{center}\vspace{-1.5ex}}m{#1}<{\vspace{-1.5ex}\end{center}}%
+}
+
+
+\begin{overlayarea}{\textwidth}{5cm}
+
+      \only<1| handout:1>{
+      \begin{tabular}[c]{lll}
+         \firsthline 
+         \multicolumn{1}{T{2.2cm}@{}}{\structure{Medidas\\ $X\leadsto\mathcal{N}(\mu,\sigma)$}} &  \multicolumn{1}{T{2.2cm}@{}}{\structure{Categor\'ia, grado, \\ sin distribuci\'on}} & \multicolumn{1}{T{2.2cm}@{}}{\structure{Binomial}} \\
+         \hline 
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ 1 muestra} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$, test binomial}  \\
+         \lasthline
+     \end{tabular} 
+              }%
+
+   \only<2| handout:2>{%
+      \begin{tabular}[c]{lll}
+         \firsthline 
+         \multicolumn{1}{T{2.2cm}@{}}{\structure{Medidas\\ $X\leadsto\mathcal{N}(\mu,\sigma)$}} &  \multicolumn{1}{T{2.2cm}@{}}{\structure{Categor\'ia, grado, \\ sin distribuci\'on}} & \multicolumn{1}{T{2.2cm}@{}}{\structure{Binomial}} \\
+         \hline 
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ 1 muestra} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$, test binomial}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ no asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Mann-Whitney} & \multicolumn{1}{V{3cm}@{}}{Test de Fisher, test $\chi^2$}  \\
+         \lasthline
+      \end{tabular}
+           }%
+
+\only<3| handout:3>{%
+      \begin{tabular}[c]{lll}
+         \firsthline 
+         \multicolumn{1}{T{2.2cm}@{}}{\structure{Medidas\\ $X\leadsto\mathcal{N}(\mu,\sigma)$}} &  \multicolumn{1}{T{2.2cm}@{}}{\structure{Categor\'ia, grado, \\ sin distribuci\'on}} & \multicolumn{1}{T{2.2cm}@{}}{\structure{Binomial}} \\
+         \hline 
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ 1 muestra} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$, test binomial}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ no asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Mann-Whitney} & \multicolumn{1}{V{3cm}@{}}{Test de Fisher, test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test de McNemar}  \\
+         \lasthline
+      \end{tabular}
+           }%
+
+\only<4| handout:4>{%
+      \begin{tabular}[c]{lll}
+         \firsthline 
+         \multicolumn{1}{T{2.2cm}@{}}{\structure{Medidas\\ $X\leadsto\mathcal{N}(\mu,\sigma)$}} &  \multicolumn{1}{T{2.2cm}@{}}{\structure{Categor\'ia, grado, \\ sin distribuci\'on}} & \multicolumn{1}{T{2.2cm}@{}}{\structure{Binomial}} \\
+         \hline 
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ 1 muestra} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$, test binomial}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ no asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Mann-Whitney} & \multicolumn{1}{V{3cm}@{}}{Test de Fisher, test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test de McNemar}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova simple} & \multicolumn{1}{V{3cm}@{}}{Test de Kruskal-Wallis} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$}  \\
+         \lasthline
+      \end{tabular}
+           }%
+
+\only<5| handout:5>{%
+      \begin{tabular}[c]{lll}
+         \firsthline 
+         \multicolumn{1}{T{2.2cm}@{}}{\structure{Medidas\\ $X\leadsto\mathcal{N}(\mu,\sigma)$}} &  \multicolumn{1}{T{2.2cm}@{}}{\structure{Categor\'ia, grado, \\ sin distribuci\'on}} & \multicolumn{1}{T{2.2cm}@{}}{\structure{Binomial}} \\
+         \hline 
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ 1 muestra} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$, test binomial}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ no asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Mann-Whitney} & \multicolumn{1}{V{3cm}@{}}{Test de Fisher, test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test de McNemar}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova simple} & \multicolumn{1}{V{3cm}@{}}{Test de Kruskal-Wallis} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova con medidas repetidas} & \multicolumn{1}{V{3cm}@{}}{Test de Friedman} & \multicolumn{1}{V{3cm}@{}}{Test $
+         Q$ de Cochran}  \\
+         \lasthline
+      \end{tabular}
+           }%
+
+\only<6| handout:6>{%
+      \begin{tabular}[c]{lll}
+         \firsthline 
+         \multicolumn{1}{T{2.2cm}@{}}{\structure{Medidas\\ $X\leadsto\mathcal{N}(\mu,\sigma)$}} &  \multicolumn{1}{T{2.2cm}@{}}{\structure{Categor\'ia, grado, \\ sin distribuci\'on}} & \multicolumn{1}{T{2.2cm}@{}}{\structure{Binomial}} \\
+         \hline 
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ 1 muestra} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$, test binomial}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ no asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Mann-Whitney} & \multicolumn{1}{V{3cm}@{}}{Test de Fisher, test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test de McNemar}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova simple} & \multicolumn{1}{V{3cm}@{}}{Test de Kruskal-Wallis} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova con medidas repetidas} & \multicolumn{1}{V{3cm}@{}}{Test de Friedman} & \multicolumn{1}{V{3cm}@{}}{Test $Q$ de Cochran}  \\
+         \multicolumn{1}{V{3cm}@{}}{Correlaci\'on de Pearson} & \multicolumn{1}{V{3cm}@{}}{Correlaci\'on de Spearman} & \multicolumn{1}{V{3cm}@{}}{Coeficientes de contingencia}  \\
+         \lasthline
+      \end{tabular}
+           }%
+
+\only<7| handout:7>{%
+      \begin{tabular}[c]{lll}
+         \firsthline 
+         \multicolumn{1}{T{2.2cm}@{}}{\structure{Medidas\\ $X\leadsto\mathcal{N}(\mu,\sigma)$}} &  \multicolumn{1}{T{2.2cm}@{}}{\structure{Categor\'ia, grado, \\ sin distribuci\'on}} & \multicolumn{1}{T{2.2cm}@{}}{\structure{Binomial}} \\
+         \hline 
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ 1 muestra} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$, test binomial}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ no asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Mann-Whitney} & \multicolumn{1}{V{3cm}@{}}{Test de Fisher, test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test de McNemar}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova simple} & \multicolumn{1}{V{3cm}@{}}{Test de Kruskal-Wallis} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova con medidas repetidas} & \multicolumn{1}{V{3cm}@{}}{Test de Friedman} & \multicolumn{1}{V{3cm}@{}}{Test $Q$ de Cochran}  \\
+         \multicolumn{1}{V{3cm}@{}}{Correlaci\'on de Pearson} & \multicolumn{1}{V{3cm}@{}}{Correlaci\'on de Spearman} & \multicolumn{1}{V{3cm}@{}}{Coeficientes de contingencia}  \\
+         \multicolumn{1}{V{3cm}@{}}{Regresi\'on (no)lineal simple} & \multicolumn{1}{V{3cm}@{}}{Regresi\'on no param\'etrica} & \multicolumn{1}{V{3cm}@{}}{Regresi\'on log\'istica simple}  \\
+         \lasthline
+      \end{tabular}
+           }%
+
+\only<8| handout:8>{%
+      \begin{tabular}[c]{lll}
+         \firsthline 
+         \multicolumn{1}{T{2.2cm}@{}}{\structure{Medidas\\ $X\leadsto\mathcal{N}(\mu,\sigma)$}} &  \multicolumn{1}{T{2.2cm}@{}}{\structure{Categor\'ia, grado, \\ sin distribuci\'on}} & \multicolumn{1}{T{2.2cm}@{}}{\structure{Binomial}} \\
+         \hline 
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ 1 muestra} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$, test binomial}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ no asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Mann-Whitney} & \multicolumn{1}{V{3cm}@{}}{Test de Fisher, test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Test $t$ asociado} & \multicolumn{1}{V{3cm}@{}}{Test de Wilcoxon} & \multicolumn{1}{V{3cm}@{}}{Test de McNemar}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova simple} & \multicolumn{1}{V{3cm}@{}}{Test de Kruskal-Wallis} & \multicolumn{1}{V{3cm}@{}}{Test $\chi^2$}  \\
+         \multicolumn{1}{V{3cm}@{}}{Anova con medidas repetidas} & \multicolumn{1}{V{3cm}@{}}{Test de Friedman} & \multicolumn{1}{V{3cm}@{}}{Test $Q$ de Cochran}  \\
+         \multicolumn{1}{V{3cm}@{}}{Correlaci\'on de Pearson} & \multicolumn{1}{V{3cm}@{}}{Correlaci\'on de Spearman} & \multicolumn{1}{V{3cm}@{}}{Coeficientes de contingencia}  \\
+         \multicolumn{1}{V{3cm}@{}}{Regresi\'on (no)lineal simple} & \multicolumn{1}{V{3cm}@{}}{Regresi\'on no param\'etrica} & \multicolumn{1}{V{3cm}@{}}{Regresi\'on log\'istica simple}  \\
+         \multicolumn{1}{V{3cm}@{}}{Regresi\'on (no)lineal multiple} & \multicolumn{1}{V{3cm}@{}}{\rule[0ex]{1.5cm}{0.3pt}} & \multicolumn{1}{V{3cm}@{}}{Regresi\'on log\'istica multiple}  \\
+         \lasthline
+      \end{tabular}
+           }%
+
+
+
+
+
+\end{overlayarea}
+
+
+
+
