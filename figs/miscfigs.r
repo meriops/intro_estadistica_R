@@ -1,5 +1,5 @@
 
-setwd("~/Telechargements/essai_StatCourse/figs")
+## miscellanous R code to produce figures used in the presentation
 
 
 # binomial distribution%%{{{
@@ -76,7 +76,6 @@ dev.off()
 %%}}}
 
 
-
 # random tree (code from Crawley, adapted)%%{{{
 
 map<-read.table("figs/data_from_Crawley_book/randomtree.txt", header=T)
@@ -115,7 +114,6 @@ dev.off()
 %%}}}
 
 
-
 #  shade of the tails with position of test statistic %%{{{
 nd <- seq(-3.5, 3.5, 0.05)
 y <- dnorm(nd, mean=0, sd=1)
@@ -148,7 +146,6 @@ dev.off()
 %%}}}
 
 
-
 # 95% bet/ +/- 2 sigma threshold values %%{{{
 png(file="PrincipTest1.png", bg="transparent", pointsize=10, res=300, width=1300, height=1300)
 plot(nd, y=y, type="l", xlim=c(-3.5, 3.5), ylim=c(0, 0.4), bty="l", col="black", lwd=1.5, ann=F, xaxt="n")
@@ -172,7 +169,6 @@ polygon(x=c(-3.5, gg[gg <= {-2}], -2), y=c(0, dnorm(gg[gg<={-2}], mean=0, sd=1),
 polygon(x=c(2, gg[gg >= {2}], 3.5), y=c(0, dnorm(gg[gg>={2}], mean=0, sd=1), 0), density=30, col="black", border=NA)
 dev.off()
 %%}}}
-
 
 
 # Lattice plot to show mammal species against productivity separately for each region%%{{{
@@ -279,8 +275,7 @@ dev.off()
 %%}}}
 
 
-
-# principle of ANOVA
+# principle of ANOVA##{{{
 oneway<-read.table("crawley/oneway.txt",header=T)
 attach(oneway)
 
@@ -386,7 +381,7 @@ k<-k+2
 lines(c(k,k),c(mean(ozone[garden=="A"]),ozone[garden=="A"] [i]), lty=1, lwd=1.5, col="darkgrey")
 }
 dev.off()
-
+##}}}
 
 
 
@@ -394,10 +389,7 @@ dev.off()
 # day 1 variance
 
 
-
-# Demonstrating the range of data to measure variability
-
-
+# Demonstrating the range of data to measure variability##{{{
 y<-c(13,7,5,12,9,15,6,11,9,7,12)
 
 pdf(file="var1.pdf", bg="transparent", pointsize=12, width=5, height=5 ) 
@@ -420,12 +412,10 @@ mtext( expression(bar(y)),side=4,  at=mean(y), las=2, adj=-0.5,  cex=1.5)
 for (i in 1: length(y)){
 lines(c(i,i),c(mean(y),y[i]), lwd=1.2)}
 dev.off()
+##}}}
 
 
-
-
-
-# variance and sample size
+# variance and sample size##{{{
 pdf(file="var6.pdf", bg="transparent", pointsize=12)
 plot(c(0,32),c(0,15),type="n", xlab="n", ylab="Varianza", cex=1.3, cex.lab=1.5)
 for (df in seq(3,31,2)) {
@@ -433,11 +423,10 @@ for( i in 1:30){
 x<-rnorm(df,mean=10,sd=2)
 points(df,var(x)) }}
 dev.off()
+##}}}
 
 
-
-
-# heteroscedasticity
+# heteroscedasticity##{{{
 #par(mfcol=c(1,2))
 pdf(file="heterosced1.pdf", bg="transparent", pointsize=12)
 a <- rnorm(90, 5, 10)
@@ -452,10 +441,10 @@ d <- rnorm(30, 5, 40)
 e <- c(b,c,d)
 plot(e, pch=18, xlab="Valores ajustados", ylab="Residuales", cex=1.5, cex.lab=1.5)
 dev.off()
+##}}}
 
 
-
-# non-normality
+# non-normality##{{{
 decay<-read.table("crawley/decay.txt",header=T)
 attach(decay)
 names(decay)
@@ -470,9 +459,10 @@ qqline(result$residuals, cex=1.5, cex.lab=1.3, ann=F, pch=18, lwd=3, lty=6, col=
 #plot(result, 2, cex=1.3, cex.lab=1.3, ann=F, sub.caption=NA, pch=18, caption=NA, lwd=30)
 title(xlab="Cuantilos teoricos", ylab="Residuales estandarizados", cex.lab=1.5, main="Q-Q plot")
 dev.off()
+##}}}
 
 
-# polynomial regression
+# polynomial regression##{{{
 rm(x,y)
 #par(mfrow=c(1,1))
 curve<-read.table("crawley/decay.txt",header=T)
@@ -511,9 +501,10 @@ plot(x,y,pch=18, cex=1.7, ann=F, cex.axis=1.3)
 lines(xv,yv2, lwd=4, col="red", lty=2)
 title(xlab="Tiempo", ylab="Emisiones radioactivas", cex.lab=1.7)
 dev.off()
+##}}}
 
 
-# regression non linear
+#  non linear regression##{{{
 deer<-read.table("crawley/jaws.txt",header=T)
 attach(deer)
 names(deer)
@@ -533,7 +524,7 @@ plot(age,bone,pch=18, ann=F, cex=1.5, cex.axis=1.7)
 lines(av,bv, col="red", lwd=4, lty=2)
 title(xlab="Edad", ylab="Longitud del hueso", cex.lab=1.7)
 dev.off()
-
+##}}}
 
 
 

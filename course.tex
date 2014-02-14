@@ -1,60 +1,60 @@
 
-% description
-% this is an introduction to R and statistics 
-% from a workshop given in 2010 at the Charles Darwin Foundation, Puerto Ayora, Galapagos, Ecuado
-% this is the code for the "course" material
+%%  ------------------------------------------------------------
+%%  DESCRIPTION
+%%  ------------------------------------------------------------
+%
+%  Course material for a basic introduction to R and statistics 
+%  4-days long in-house workshop held in April 2010
+%  at the Charles Darwin Foundation, Puerto Ayora, Galapagos, Ecuador
+%
+%  Covers *very* basic but important topics instatistcs and data analysis with R !
+%
+%%  ------------------------------------------------------------
 
 
-
-%\documentclass[gray,handout,mathserif]{beamer}
+%  presentation document
 \documentclass[mathserif]{beamer}
 
+%%  handout document
+%  \documentclass[gray,handout,mathserif]{beamer}
 
-%\includeonlyframes{tnx1,tnx2}
-\includeonlylecture{day2}
+%%  to include only day1, day2, day2 or day3 in the compilation
+%  \includeonlylecture{day2}
 
 
-% ========================= GENERAL THEMES ========================= %%{{{
+
+
+%% ========================= GENERAL BEAMER THEME OPTIONS ========================= %%{{{
   
-  % modes
+%%  modes
 
-\mode<presentation> {%%%{{{
+%%  presentation mode%%%{{{
+\mode<presentation> {
+  % ----- complete theme -----
+  \usetheme[hideothersubsections]{Hannover}
 
-% ----- complete theme -----
-\usetheme[hideothersubsections]{Hannover}
+  % --- inner color theme
+  \usecolortheme{rose}
 
-% ----- colors -----
-% --- complete color theme
-%\usecolortheme{seagull}
-
-% --- inner color theme
-\usecolortheme{rose}
-
-% --- outer color theme
-%\usecolortheme{seahorse}
-
-% ----- uncover behaviour -----
-\setbeamercovered{transparent}
+  % ----- uncover behaviour -----
+  \setbeamercovered{transparent}
 }%%%}}}
 
-% options for handout mode
-%\mode<handout>{%%{{{
-%   \usetheme{Pittsburgh}
-%   %\setbeamercolor{background canvas}{bg=black!5}
-%
-%   \setbeamertemplate{footline}[page number]
-%
-%\usepackage{pgfpages}
-%\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
-%\pgfpageslogicalpageoptions{1}{border code=\pgfusepath{stroke}}
-%\pgfpageslogicalpageoptions{2}{border code=\pgfusepath{stroke}}
-%\pgfpageslogicalpageoptions{3}{border code=\pgfusepath{stroke}}
-%\pgfpageslogicalpageoptions{4}{border code=\pgfusepath{stroke}}
-%\nofiles
-%
-%   }
-%%%}}}
-%
+
+%%  handout mode%%{{{
+\mode<handout>{
+  \usetheme{Pittsburgh}
+  \setbeamertemplate{footline}[page number]
+  \usepackage{pgfpages}
+  \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+  \pgfpageslogicalpageoptions{1}{border code=\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{2}{border code=\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{3}{border code=\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{4}{border code=\pgfusepath{stroke}}
+  \nofiles
+}
+%%}}}
+
 
 
 % To get rid of navigation symbols at the bottom right of slides
@@ -88,20 +88,9 @@
 \usetikzlibrary{arrows}%%}}}
 
 
-% ----- font -----%%{{{
-\usepackage[english]{babel}
- \usepackage[utf8]{inputenx}
-% ----- to choose font using fontspec + xelatex -----
-%%  \usepackage{fontspec}
-%%  \usepackage{xunicode} %Unicode extras!
-%%  \usepackage{xltxtra}  %Fixes
-
-%%  %\setmainfont{Liberation Serif}
-%%  %\setsansfont{Liberation Sans}
-%%  %\setmainfont{Liberation Sans}
-%%  \setmainfont{Universalis ADF Cd Std}
-%%  \setmainfont{Universalis ADF Cd Std}
-%%  %\setsansfont{Banksia}%%}}}
+% ----- other options: fonts etc -----%%{{{
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenx}
 
 
 % ----- misc characters (math...) -----%%{{{
@@ -110,35 +99,29 @@
 \usepackage{mathabx}   % maths fonts
 \usepackage{amsmath}   % maths fonts
 \usepackage{wasysym}   % maths fonts
-\usepackage{stmaryrd}  % maths fonts%%}}}
+\usepackage{stmaryrd}  % maths fonts
+%%}}}
 
 
 % ----- extra functionalities in arrays -----%%{{{
 \usepackage{array}   
-\usepackage{multirow}   %%}}}
+\usepackage{multirow}   
+%%}}}
 
 
 % ----- links and pdf -----%%{{{
 % cf doc from hyperref for refining options
- \hypersetup{%
+\hypersetup{%
  colorlinks=true,    %no frame around URL
  urlcolor=olive,    % color  of URLs (brown, gray, 
- %unicode=true,
 }%%%}}}
 
 
-% ----- logo -----%%{{{
-% \pgfdeclareimage[height=1.5cm]{le-logo}{fcd-logo.png}
-% \logo{\pgfuseimage{le-logo}}
-%\pgfdeclareimage[height=0.5cm]{logo}{tu-logo}
-%\logo{\pgfuseimage{logo}}
-%\logo{\includegraphics[height=0.5cm]{logo.png}}
-% ==| handout:1> does no work with the selected theme (?)%%}}}
-
-
-% ----- R logo -----%%{{{
-\newcommand{\Rlogo}{\protect\includegraphics[height=2.5ex,keepaspectratio]{Rlogo.png}}%%}}}
-% PROBLEM
+% ----- define command for R logo -----%%{{{
+\newcommand{\Rlogo}{
+  \protect\includegraphics[height=2.5ex,keepaspectratio]{figs/Rlogo}
+}
+%%}}}
 
 
 
@@ -152,38 +135,40 @@
 %%}}}
 
 
-%% ----- contents at begining of each section%%{{{
+%%% ----- possible contents at begining of each section%%{{{
 %  \AtBeginSection[]{%
 %    \begin{frame}<beamer| handout:1>{Programa}
 %      \tableofcontents[currentsection, hideallsubsections]
 %    \end{frame}
-%  }%%%}}}
+%  }
+%%%}}}
 
 
-%% ----- contents at begining of each part%%{{{
-% uncomment to compile the whole doc
+%%% ----- possible contents at begining of each part%%{{{
 %\AtBeginPart{%
-%\frame{%
-%\partpage
-%} }%%}}}
+% \frame{
+%   \partpage
+% }
+%}
+%%%}}}
 
 %%}}}
-
 
 
 % ----- TITLE PAGE -----%%{{{
 \title[Introducci\'on a la estad\'istica]{Introducci\'on a la estad\'istica}
 \subtitle[Bases indispensables y uso de R]{Bases indispensables y uso de \Rlogo}
-\author[]{Olivier Devineau \\ \href{mailto:olivier.devineau@fcdarwin.org.ec}{\texttt{\small olivier.devineau@fcdarwin.org.ec} } }
+\author[]{Olivier Devineau}
 \institute[]{Fundaci\'on Charles Darwin}
-\date[Version courte]{Taller interno, 27--30 abril 2010}
+\date[]{Taller interno, 27--30 abril 2010}
 %%}}}
 
+%}}}
 
 
 
 
-
+% ========================= CONTENT =========================%%%{{{
 \begin{document}
 
 
@@ -698,6 +683,7 @@ Correcciones, comentarios y sugerencias por
 
 
 
+
 % ==================== SECTION: Experimental design: key concepts =============
 \section[Dise\~no experimental]{Dise\~no experimental: conceptos claves}
 
@@ -1072,10 +1058,10 @@ Correcciones, comentarios y sugerencias por
    \end{itemize}
    \vspace{-1.5cm}
          \begin{figure}
-            \includegraphics<1| handout:0>[scale=0.75]{figs/LoiBinom-n1.png}
-            \includegraphics<2| handout:1>[scale=0.75]{figs/LoiBinom-n3.png}
-            \includegraphics<3| handout:0>[scale=0.75]{figs/LoiBinom-n5.png}
-            \includegraphics<4| handout:0>[scale=0.75]{figs/LoiBinom-n30.png}
+            \includegraphics<1| handout:0>[scale=0.75]{figs/BinomDist-n1.png}
+            \includegraphics<2| handout:1>[scale=0.75]{figs/BinomDist-n3.png}
+            \includegraphics<3| handout:0>[scale=0.75]{figs/BinomDist-n5.png}
+            \includegraphics<4| handout:0>[scale=0.75]{figs/BinomDist-n30.png}
          \end{figure}
 \end{frame}%%%}}}
 
@@ -1130,7 +1116,7 @@ Correcciones, comentarios y sugerencias por
    \end{itemize}
    \vspace{-1cm}
          \begin{figure}
-            \includegraphics[scale=0.55]{figs/LoiPoiss.png}
+            \includegraphics[scale=0.55]{figs/PoissDist.png}
          \end{figure}
 \end{frame}%
 \note[itemize]{
@@ -1173,11 +1159,11 @@ Correcciones, comentarios y sugerencias por
    \end{itemize}
    \vspace{-1cm}
    \visible<2-| handout:1>{\begin{figure}
-      \includegraphics<1| handout:0>[scale=0.6]{figs/LoiNorm1.png}
-      \includegraphics<2| handout:0>[scale=0.6]{figs/LoiNorm2.png}
-      \includegraphics<3| handout:0>[scale=0.6]{figs/LoiNorm3.png}
-      \includegraphics<4| handout:0>[scale=0.6]{figs/LoiNorm4.png}
-      \includegraphics<5| handout:1>[scale=0.6]{figs/LoiNorm5.png}
+      \includegraphics<1| handout:0>[scale=0.6]{figs/NormDist1.png}
+      \includegraphics<2| handout:0>[scale=0.6]{figs/NormDist2.png}
+      \includegraphics<3| handout:0>[scale=0.6]{figs/NormDist3.png}
+      \includegraphics<4| handout:0>[scale=0.6]{figs/NormDist4.png}
+      \includegraphics<5| handout:1>[scale=0.6]{figs/NormDist5.png}
    \end{figure}
    }
 \end{frame}%
@@ -1194,10 +1180,10 @@ Correcciones, comentarios y sugerencias por
    \begin{columns}[c, totalwidth=10cm]
       \begin{column}[]{6cm}
          \begin{figure}
-            \includegraphics<1| handout:0>[scale=0.65]{figs/LoiNorm7.png}
-            \includegraphics<2| handout:1>[scale=0.65]{figs/LoiNorm8.png}
-            \includegraphics<3| handout:2>[scale=0.65]{figs/LoiNorm9.png}
-            \includegraphics<4| handout:3>[scale=0.65]{figs/LoiNorm10.png}
+            \includegraphics<1| handout:0>[scale=0.65]{figs/NormDist7.png}
+            \includegraphics<2| handout:1>[scale=0.65]{figs/NormDist8.png}
+            \includegraphics<3| handout:2>[scale=0.65]{figs/NormDist9.png}
+            \includegraphics<4| handout:3>[scale=0.65]{figs/NormDist10.png}
          \end{figure}
       \end{column}
       \begin{column}[]{3.5cm}
@@ -1355,7 +1341,7 @@ Correcciones, comentarios y sugerencias por
    \begin{columns}[c, totalwidth=10cm]
       \begin{column}[]{5.5cm}
          \begin{figure}
-            \includegraphics<1| handout:0>[scale=0.6]{figs/LoiNorm9.png}
+            \includegraphics<1| handout:0>[scale=0.6]{figs/NormDist9.png}
             \includegraphics<2-3| handout:1>[scale=0.6]{figs/PrincipTest1.png}
             \includegraphics<4-| handout:2>[scale=0.6]{figs/PrincipTest2.png}
          \end{figure}
@@ -1619,7 +1605,7 @@ Correcciones, comentarios y sugerencias por
    \frametitle{?`Como elegir el test adecuado?}
    \framesubtitle{Algunas directrices (1)}
    \scriptsize
-   \input{figs/choixtest1.tex}
+   \input{figs/choicetest1.tex}
 \end{frame}%%%}}}
 
 
@@ -1628,7 +1614,7 @@ Correcciones, comentarios y sugerencias por
    \frametitle{?`Como elegir el test adecuado?}
    \framesubtitle{Algunas directrices (2)}
    \scriptsize
-   \input{figs/choixtest2.tex}
+   \input{figs/choicetest2.tex}
    \normalsize
 \end{frame}%%}}}
 
@@ -1737,7 +1723,7 @@ Correcciones, comentarios y sugerencias por
 
    \renewcommand{\arraystretch}{1.5}
   \scriptsize
-   \input{figs/tablechoix.tex}
+   \input{figs/tablechoice.tex}
 \end{frame}%%%}}}
 
 

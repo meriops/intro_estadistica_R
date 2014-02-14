@@ -1,5 +1,8 @@
+# R code for figure figmaxlik
+# used on line 966 in file main.tex
 
-setwd("~/Telechargements/essai_StatCourse/figs")
+
+
 x <- c(1, 3, 4, 6, 8, 9, 12)
 y <- c(5,8,6,10,9,13,12)
 

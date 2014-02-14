@@ -4,7 +4,6 @@
 #
 #
 
-setwd("~/Telechargements/essai_StatCourse/stats/scripts")
 
 # eso es mi primer script con R
 # help.search("mean")

@@ -8,7 +8,6 @@
 # NUMERO DE ERRORES PER PAGINA EN UN FOLLETO DE 8 PAGINAS
 # ------------------------------------------------------
 
-setwd(C:\Documents and Settings\sysadmin\Desktop\curso R\stats\scripts)
 
 # Crear el vector err1 = 2 3 0 3 1 0 0 1
 err1=c(2, 3, 0, 3, 1, 0, 0, 1)

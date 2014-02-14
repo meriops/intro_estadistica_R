@@ -2,8 +2,6 @@
 \documentclass[mathserif]{beamer}
 
 
-%\includeonlyframes{d45}
-\includeonlylecture{day3}
 
 %\usepackage{beamerarticle}
 
@@ -14,33 +12,20 @@
 % ----- complete theme -----
 \usetheme[hideothersubsections]{Hannover}
 
-% ----- colors -----
-% --- complete color theme
-%\usecolortheme{seagull}
-
 % --- inner color theme
 \usecolortheme{rose}
-
-% --- outer color theme
-%\usecolortheme{seahorse}
 
 
 % ----- uncover behaviour -----
 \setbeamercovered{transparent}
 }%%%}}}
 
-%To get rid of the navigation symbols at the bottom right of each slide I use
-%\setbeamertemplate{navigation symbols}{}
+% get rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
 
 
 % ----- modify some templates of beamer -----%%{{{
 \setbeamertemplate{blocks}[rounded]
-%\setbeamertemplate{enumerate items}[default]%%}}}
-
-
-% ----- modify colors -----%%{{{
-%\setbeamercolor{title}{fg=red!80!black}
-%\setbeamercolor{title}{fg=red!80!black,bg=red!20!white}%%%}}}
 
 %%}}}
 
@@ -49,11 +34,7 @@
 
 % ----- misc layout -----%%{{{
 \usepackage{pgfpages}
-%%\pgfpagesuselayout{resize}[a4paper,border shrink=5mm,landscape]
-%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
-%\setbeameroption{show notes}
-%\setbeamertemplate{note page}[compress]
-%\urlstyle{sf}%%}}}
+%%}}}
 
 
 % ----- PGF / Tikz graphics -----%%{{{
@@ -64,20 +45,8 @@
 
 
 % ----- font -----%%{{{
-\usepackage[english]{babel}
+\usepackage[spanish,english]{babel}
  \usepackage[utf8]{inputenx}
-% ----- to choose font using fontspec + xelatex -----
-%%  \usepackage{fontspec}
-%%  \usepackage{xunicode} %Unicode extras!
-%%  \usepackage{xltxtra}  %Fixes
-
-%%  %\setmainfont{Liberation Serif}
-%%  %\setsansfont{Liberation Sans}
-%%  %\setmainfont{Liberation Sans}
-%%  \setmainfont{Universalis ADF Cd Std}
-%%  \setmainfont{Universalis ADF Cd Std}
-%%  %\setsansfont{Banksia}%%}}}
-
 
 % ----- misc characters (math...) -----%%{{{
 \usepackage{ccicons} % icons for Creative Commons
@@ -98,17 +67,7 @@
  \hypersetup{%
  colorlinks=true,    %no frame around URL
  urlcolor=olive,    % color  of URLs (brown, gray, 
- %unicode=true,
 }%%%}}}
-
-
-% ----- logo -----%%{{{
-% \pgfdeclareimage[height=1.5cm]{le-logo}{fcd-logo.png}
-% \logo{\pgfuseimage{le-logo}}
-%\pgfdeclareimage[height=0.5cm]{logo}{tu-logo}
-%\logo{\pgfuseimage{logo}}
-%\logo{\includegraphics[height=0.5cm]{logo.png}}
-% ==> does no work with the selected theme (?)%%}}}
 
 
 % ----- R logo -----%%{{{
@@ -141,17 +100,6 @@
 %} }%%}}}
 
 %%}}}
-
-%
-%% ----- TITLE PAGE -----%%{{{
-%\title[Introducci\'on a la estad\'istica]{Introducci\'on a la estad\'istica}
-%\subtitle[Bases indispensables y uso de R]{Bases indispensables y uso de \Rlogo}
-%\author[]{Olivier Devineau \\ \href{mailto:olivier.devineau@fcdarwin.org.ec}{\texttt{\small olivier.devineau@fcdarwin.org.ec} } }
-%\institute[]{Fundaci\'on Charles Darwin}
-%\date[Version courte]{Taller interno, 27--30 abril 2010}%%}}}
-%
-
-
 
 
 
@@ -388,25 +336,6 @@
 \end{itemize}
 \end{exampleblock}
 \end{frame}%%}}}
-
-
-
-
-
-%
-%\begin{frame}[plain,label=d45]%%{{{
-%\frametitle{Numero de errores en un follete}
-%\begin{itemize}
-%   \item Crear el vector \emph{err1} = 2 3 0 3 1 0 0 1
-%   \item Calculan la media, la mediana y la varianza de \emph{err1}
-%   \item Entre la versi\'on 1 y la versi\'on 2, se corregio las errores de la primera pagina
-%   \item Crear el vector \emph{err2} = 0 3 0 3 1 0 0 1 que toma al dia el conteo de errores en el folleto \alert{sin} tipear el vector completo
-%\end{itemize}
-%\end{frame}%%}}}
-%
-
-
-
 
 
 
@@ -822,39 +751,6 @@
 \end{frame}%%}}}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{frame}[plain,label=d45]%%{{{
-\frametitle{}
-\begin{itemize}
-   \item 
-   \item 
-   \item 
-\end{itemize}
-\end{frame}%%}}}
 
 \end{document}
 
