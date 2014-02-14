@@ -1,8 +1,8 @@
 
 % description
 % this is an introduction to R and statistics 
-% from a workshop given in 2010 in Galapagos
-% this is the "course" material
+% from a workshop given in 2010 at the Charles Darwin Foundation, Puerto Ayora, Galapagos, Ecuado
+% this is the code for the "course" material
 
 
 
@@ -37,7 +37,7 @@
 \setbeamercovered{transparent}
 }%%%}}}
 
-%
+% options for handout mode
 %\mode<handout>{%%{{{
 %   \usetheme{Pittsburgh}
 %   %\setbeamercolor{background canvas}{bg=black!5}
@@ -57,11 +57,11 @@
 %
 
 
-%To get rid of the navigation symbols at the bottom right of each slide I use
-%\setbeamertemplate{navigation symbols}{}
+% To get rid of navigation symbols at the bottom right of slides
+\setbeamertemplate{navigation symbols}{}
 
 
-% ----- modify some templates of beamer -----%%{{{
+% ----- slightly modify the beamer templates -----%%{{{
 \setbeamertemplate{blocks}[rounded]
 %\setbeamertemplate{enumerate items}[default]%%}}}
 
@@ -138,16 +138,18 @@
 
 % ----- R logo -----%%{{{
 \newcommand{\Rlogo}{\protect\includegraphics[height=2.5ex,keepaspectratio]{Rlogo.png}}%%}}}
+% PROBLEM
 
 
 
 % ----- contents at begining of each lecture%%{{{
 \AtBeginLecture{%
-\frame{%
-\LARGE %
-\begin{center}
-\structure{\insertlecture}
-\end{center} } }%%}}}
+  \frame{%
+  \LARGE %
+  \begin{center}
+  \structure{\insertlecture}
+\end{center} } }
+%%}}}
 
 
 %% ----- contents at begining of each section%%{{{
@@ -174,7 +176,8 @@
 \subtitle[Bases indispensables y uso de R]{Bases indispensables y uso de \Rlogo}
 \author[]{Olivier Devineau \\ \href{mailto:olivier.devineau@fcdarwin.org.ec}{\texttt{\small olivier.devineau@fcdarwin.org.ec} } }
 \institute[]{Fundaci\'on Charles Darwin}
-\date[Version courte]{Taller interno, 27--30 abril 2010}%%}}}
+\date[Version courte]{Taller interno, 27--30 abril 2010}
+%%}}}
 
 
 
