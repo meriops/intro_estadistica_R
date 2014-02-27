@@ -1,23 +1,30 @@
 
 
-##   Introduction: what is it?
-This is an introduction to R and to statistics with R taught in 2010 as a 4-days workshop at the Charles Darwin Foundation, Galapagos, Ecuador. The audience was very diverse and included complete beginners in both statistics and R. Therefore, this course material covers the very basics and only touches upon more advanced topics. 
-%
-The workshop was initially organized with classes in the morning and hands-on sessions in the afternoon but the line between courses and labs was loose as we adated the content to the participants questions and concerns. 
-%
-This material was created in 2010 so it is provided "as is". Also, it is in Spanish. There is not as much course material available in Spanish as in English so I thought I would share it with a CC licence. In addition, sharing this material gives me a concrete example to learn git and github...
-%
+##   What is it? 
+This repository contains the course material for a 4 days wokshop on _basic statistics and R_ which I taught in 2010 at the Charles Darwin Foundation, Galápagos, Ecuador. The audience was diverse and included complete beginners in both statistics and R, together with people with a bit more background. This course material covers (some of) the very basics and only touches upon more advanced topics.      
 
-## Requirements
-LaTeX packages dependencies etc.
+Initially, the workshop was organized with classes in the morning and hands-on sessions in the afternoon, but the line between courses and labs was loose as we adapted the content to participants' questions and concerns. However, the material in this repository still somewhat reflects this organization with "courses" and "labs". 
 
-## License
-Not quite sure yet
+This material is provided as LaTeX source code with the corresponding pdf files. Quick and not-so-clean R scritps written together with participants during labs sessions are also provided. Although the source is commented in English, the actual content is in __Spanish__.  
+  
 
-## Ackowledgements
-When creating this material, I got help from these people:
+## Use of this material
+This material was created in 2010 and is shared here "as is". Feel free to download, use, modify, pull request, you name it. Comments, suggestions or thanks are welcome! If you just want to drop me a line to let me know you use this stuff and what you use it for, that's fine too!  
 
-## Contact
-Comments and suggestions are welcome. Feel free to use, to modify, to share etc. Also, feel free to drop me a line if you end up using this stuff, just to let me know. 
+
+***
+
+
+## ¿Qué es eso?
+Este depósito contiene el material para un curso de 4 días de introducción a la estadística y a R que he enseñado en 2010 a la Fundación Charles Darwin en Galápagos, Ecuador. El       público estaba diverso, con principiantes en ambos estadística y R, junto con otra gente    con un poco mas de experiencia. Este material cubre (un poco) de lo básico y solamente toca de pasada sobre unos temas mas avanzados.  
+
+Inicialmente, el taller estaba organizado con cursos en las mañanas y sesiones de trabajos prácticos and las tardes pero la linea entre los cursos y los ejercicios era suelta porque  nos adaptamos a las preguntas de los participantes. A pesar de eso, la organización del material en este depósito todavía refleja esta organización con "cursos" y "ejercicios".   
+
+Este material esta provisto como código LaTeX y los pdfs correspondientes. También los      "scripts" escritos durante los ejercicios con los participantes están provistos "así no mas". Aunque los comentarios del código son en Ingles, el contenido del material es en Español.   
+
+
+## Uso de este material
+Este material fue escrito en 2010 y esta compartido aquí "tal cual". Siéntase libre  de bajarlo, usarlo, modificarlo, de "pull request", lo que sea. ¡Comentarios, sugerencias  y agradecimientos están bienvenidos! Si solo quiere escribirme unas lineas para decirme que usa este material o porque lo esta usando, ¡que bien!  
+
 
 
