@@ -18,16 +18,18 @@
 
 % ----- uncover behaviour -----
 \setbeamercovered{transparent}
-}%%%}}}
+}%%
+%}}}
 
-% get rid of navigation symbols
+% get rid of navigation symbols%{{{
 \setbeamertemplate{navigation symbols}{}
 
 
-% ----- modify some templates of beamer -----%%{{{
+% ----- modify some templates of beamer -----%
 \setbeamertemplate{blocks}[rounded]
-
-%%}}}
+%}}}
+%
+%}}}
 
 
 % ========================= GENERAL CONFIGURATION =========================%%%{{{
@@ -36,17 +38,15 @@
 \usepackage{pgfpages}
 %%}}}
 
-
 % ----- PGF / Tikz graphics -----%%{{{
 \usepackage{tikz}
 \usetikzlibrary{trees}
 \usepgflibrary{arrows}
 \usetikzlibrary{arrows}%%}}}
 
-
 % ----- font -----%%{{{
 \usepackage[spanish,english]{babel}
- \usepackage[utf8]{inputenx}
+ \usepackage[utf8]{inputenx}%}}}
 
 % ----- misc characters (math...) -----%%{{{
 \usepackage{ccicons} % icons for Creative Commons
@@ -56,11 +56,9 @@
 \usepackage{wasysym}   % maths fonts
 \usepackage{stmaryrd}  % maths fonts%%}}}
 
-
 % ----- extra functionalities in arrays -----%%{{{
 \usepackage{array}   
 \usepackage{multirow}   %%}}}
-
 
 % ----- links and pdf -----%%{{{
 % cf doc from hyperref for refining options
@@ -68,7 +66,6 @@
  colorlinks=true,    %no frame around URL
  urlcolor=olive,    % color  of URLs (brown, gray, 
 }%%%}}}
-
 
 % ----- R logo -----%%{{{
 \newcommand{\Rlogo}{\protect\includegraphics[height=2.5ex,keepaspectratio]{Rlogo.png}}%%}}}
@@ -99,12 +96,12 @@
 %\partpage
 %} }%%}}}
 
-%%}}}
+%
+%}}}
 
 
 
-
-\begin{document}
+\begin{document}%{{{
 
 
 \lecture{Introducci\'on a \Rlogo}{day1}
@@ -753,7 +750,7 @@
 
 
 \end{document}
-
+%}}}
 
 
 
